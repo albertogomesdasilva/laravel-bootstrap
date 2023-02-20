@@ -24,7 +24,8 @@
 
                
 
-         {{ $rota }}
+{{--          
+         {{ $rota }} --}}
             
             
                 <a class="navbar-brand" href="{{ url('/') }}">Laravel
