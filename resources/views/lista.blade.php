@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            {{-- <div class="card"> --}}
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
@@ -20,11 +20,8 @@
                   
 
 
-{{-- <x-layout title='Listar as Maquinas' rota='Rota Raiz'> --}}
-<div class="cor-azul">
 <div class="container mt-4">
     <h1>Listar as Máquinas</h1>
-    <hr>
 
 
     <table class="table table-hover">
@@ -44,22 +41,10 @@
   
   </tbody>
 </table>
-    <hr>
-<button type="button" class="btn btn-primary btn-lg btn-block">Novo Registro</button>
-</div>
-</div>
+     {{ $machines->links() }}
 
-{{-- </x-layout> --}}
-
-
-
-
-
-
-
-                </div>
-            </div>
-        </div>
     </div>
-</div>
+    </div>
+     </div>
+       </div>
 @endsection

@@ -34,15 +34,18 @@ class ListaController
         //dd($machines);
 
 
-        $machines = Machine::all();
+        $machines = Machine::paginate(2);
         //dd($machines);
-
           $rota = 'lista';
            // return view('home')->with('rota', $rota);
         
 
-        return view('lista')->with('machines', $machines)->with('rota', $rota);;
+        // return view('lista')->with('machines', $machines)->with('rota', $rota);
+        return view('lista', ['machines' => $machines, 'rota' => $rota]);
     }
+
+  
+
 
     public function show($id)
     {
