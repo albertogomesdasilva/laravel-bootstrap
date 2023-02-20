@@ -20,6 +20,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <hr>
                 </div>
             </div>
         </div>

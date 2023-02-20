@@ -21,17 +21,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
 
-
-               
-
-{{--          
-         {{ $rota }} --}}
-            
-            
-                <a class="navbar-brand" href="{{ url('/') }}">Laravel
-                    {{-- {{ config('app.name', 'Laravel') }} --}}
-                </a>
-
+         
             @php
                 function UrlAtual(){
                     $dominio= $_SERVER['HTTP_HOST'];
@@ -39,58 +29,85 @@
                     return $url;
                     }
                     $url =  UrlAtual();
-                   
+                
             @endphp     
 
-
-
-{{-- home --}}
-            @php
-                    $menu = 'home';
+                @php
+                    $menu = 'login';
                     $pos = strpos( $url, $menu);
-            @endphp
-            @if ($pos == false)
-              
 
-                <a class="navbar-brand" href="{{ url('/home') }}">Home
-                    {{-- {{ config('app.name', 'Laravel') }} --}}
-                </a>
-                          
-            @endif
-               
-    {{-- fim home          --}}
-{{-- lista --}}
-            @php
-                    $menu = 'lista';
-                    $pos = strpos( $url, $menu);
-            @endphp
-            @if ($pos == false)
-              
+                @endphp                    
+                    
+                    
+                
+                    @if ($pos == false )
 
-                <a class="navbar-brand" href="{{ url('/lista') }}">Lista
-                    {{-- {{ config('app.name', 'Laravel') }} --}}
-                </a>
-                          
-            @endif
-               
-    {{-- fim home          --}}
-{{-- contatos --}}
-            @php
-                    $menu = 'contatos';
-                    $pos = strpos( $url, $menu);
-            @endphp
-            @if ($pos == false)
-              
-            
-                <a class="navbar-brand" href="{{ url('/contatos') }}">Contatos
-                    {{-- {{ config('app.name', 'Laravel') }} --}}
-                </a>
-                          
-            @endif
-               
-    {{-- fim home          --}}
-             
-              
+                        @php
+                                $menu = 'register';
+                                $pos = strpos( $url, $menu);
+                            
+                        @endphp
+
+                           @if ($pos == false )
+
+                            {{--          
+                                    {{ $rota }} --}}
+                                        
+                                        
+                                            <a class="navbar-brand" href="{{ url('/') }}">Laravel
+                                                {{-- {{ config('app.name', 'Laravel') }} --}}
+                                            </a>
+
+                            {{-- home --}}
+                                        @php
+                                                $menu = 'home';
+                                                $pos = strpos( $url, $menu);
+                                        @endphp
+                                        @if ($pos == false)
+                                        
+
+                                            <a class="navbar-brand" href="{{ url('/home') }}">Home
+                                                {{-- {{ config('app.name', 'Laravel') }} --}}
+                                            </a>
+                                                    
+                                        @endif
+                                        
+                                {{-- fim home          --}}
+                            {{-- lista --}}
+                                        @php
+                                                $menu = 'lista';
+                                                $pos = strpos( $url, $menu);
+                                        @endphp
+                                        @if ($pos == false)
+                                        
+
+                                            <a class="navbar-brand" href="{{ url('/lista') }}">Lista
+                                                {{-- {{ config('app.name', 'Laravel') }} --}}
+                                            </a>
+                                                    
+                                        @endif
+                                        
+                                {{-- fim home          --}}
+                            {{-- contatos --}}
+                                        @php
+                                                $menu = 'contatos';
+                                                $pos = strpos( $url, $menu);
+                                        @endphp
+                                        @if ($pos == false)
+                                        
+                                        
+                                            <a class="navbar-brand" href="{{ url('/contatos') }}">Contatos
+                                                {{-- {{ config('app.name', 'Laravel') }} --}}
+                                            </a>
+                                                    
+                                        @endif
+                                        
+                                {{-- fim home          --}}
+
+                            @endif
+                        @endif
+                                        
+                                        
 
                     
 
@@ -146,6 +163,9 @@
 
         <main class="py-4">
             @yield('content')
+
+            {{-- {{ $slot }} --}}
+
         </main>
     </div>
 </body>
